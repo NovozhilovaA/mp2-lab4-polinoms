@@ -1,0 +1,36 @@
+﻿Сборка начата 02.04.2016 22:45:47.
+     1>Проект "C:\Labs\mp2-lab4-polinoms\tests\tests.vcxproj" в узле 3 (целевые объекты Rebuild).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"..\mp2-lab4-polinoms" /I..\gtest /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt test_main.cpp test_polinom.cpp
+         test_polinom.cpp
+     1>c:\labs\mp2-lab4-polinoms\mp2-lab4-polinoms\polinom.h(23): warning C4522: Polinom: заданы несколько операторов присваивания
+     1>c:\labs\mp2-lab4-polinoms\gtest\gtest.h(18863): error C2784: bool testing::internal::operator ==(T *,const testing::internal::linked_ptr<T> &): не удалось вывести аргумент шаблон для "T *" из "const int"
+                 c:\labs\mp2-lab4-polinoms\gtest\gtest.h(9175): см. объявление "testing::internal::operator =="
+                 c:\labs\mp2-lab4-polinoms\gtest\gtest.h(18900): см. ссылку на создание экземпляров функции шаблон при компиляции "testing::AssertionResult testing::internal::CmpHelperEQ<T1,T2>(const char *,const char *,const T1 &,const T2 &)"
+                 with
+                 [
+                     T1=int,
+                     T2=Monom
+                 ]
+                 c:\labs\mp2-lab4-polinoms\tests\test_polinom.cpp(44): см. ссылку на создание экземпляров функции шаблон при компиляции "testing::AssertionResult testing::internal::EqHelper<lhs_is_null_literal>::Compare<int,Monom>(const char *,const char *,const T1 &,const T2 &)"
+                 with
+                 [
+                     lhs_is_null_literal=false,
+                     T1=int,
+                     T2=Monom
+                 ]
+                 c:\labs\mp2-lab4-polinoms\tests\test_polinom.cpp(44): см. ссылку на создание экземпляров функции шаблон при компиляции "testing::AssertionResult testing::internal::EqHelper<lhs_is_null_literal>::Compare<int,Monom>(const char *,const char *,const T1 &,const T2 &)"
+                 with
+                 [
+                     lhs_is_null_literal=false,
+                     T1=int,
+                     T2=Monom
+                 ]
+     1>c:\labs\mp2-lab4-polinoms\gtest\gtest.h(18863): error C2677: бинарный "==": не найден глобальный оператор, принимающий тип "const Monom" (или приемлемое преобразование отсутствует)
+         test_main.cpp
+         Создание кода...
+     1>Построение проекта "C:\Labs\mp2-lab4-polinoms\tests\tests.vcxproj" завершено (целевые объекты Rebuild) с ошибкой.
+
+Сбой построения.
+
+Затраченное время: 00:00:02.65

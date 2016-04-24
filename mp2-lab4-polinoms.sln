@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mp2-lab4-polinoms", "mp2-lab4-polinoms\mp2-lab4-polinoms.vcxproj", "{276B7A9F-9674-4E42-BF45-ACC193D3A294}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gtest", "gtest\gtest.vcxproj", "{0CDA7CAC-CC36-4B5F-A2F6-9EBF173B9BA8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tests", "tests\tests.vcxproj", "{CDE6AA57-F59B-445B-B21F-E1BC4E2F53CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{276B7A9F-9674-4E42-BF45-ACC193D3A294} = {276B7A9F-9674-4E42-BF45-ACC193D3A294}
+		{0CDA7CAC-CC36-4B5F-A2F6-9EBF173B9BA8} = {0CDA7CAC-CC36-4B5F-A2F6-9EBF173B9BA8}
+		{3AA5BEE7-6047-46D1-BF5C-938B032F4EDC} = {3AA5BEE7-6047-46D1-BF5C-938B032F4EDC}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example", "example\example.vcxproj", "{3AA5BEE7-6047-46D1-BF5C-938B032F4EDC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{276B7A9F-9674-4E42-BF45-ACC193D3A294} = {276B7A9F-9674-4E42-BF45-ACC193D3A294}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PolinomForm", "PolinomForm\PolinomForm\PolinomForm.vcxproj", "{24A9484A-8141-41C8-A99D-7068D9866A5B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{276B7A9F-9674-4E42-BF45-ACC193D3A294} = {276B7A9F-9674-4E42-BF45-ACC193D3A294}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{276B7A9F-9674-4E42-BF45-ACC193D3A294}.Debug|Win32.ActiveCfg = Debug|Win32
+		{276B7A9F-9674-4E42-BF45-ACC193D3A294}.Debug|Win32.Build.0 = Debug|Win32
+		{276B7A9F-9674-4E42-BF45-ACC193D3A294}.Release|Win32.ActiveCfg = Release|Win32
+		{276B7A9F-9674-4E42-BF45-ACC193D3A294}.Release|Win32.Build.0 = Release|Win32
+		{0CDA7CAC-CC36-4B5F-A2F6-9EBF173B9BA8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0CDA7CAC-CC36-4B5F-A2F6-9EBF173B9BA8}.Debug|Win32.Build.0 = Debug|Win32
+		{0CDA7CAC-CC36-4B5F-A2F6-9EBF173B9BA8}.Release|Win32.ActiveCfg = Release|Win32
+		{0CDA7CAC-CC36-4B5F-A2F6-9EBF173B9BA8}.Release|Win32.Build.0 = Release|Win32
+		{CDE6AA57-F59B-445B-B21F-E1BC4E2F53CB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CDE6AA57-F59B-445B-B21F-E1BC4E2F53CB}.Debug|Win32.Build.0 = Debug|Win32
+		{CDE6AA57-F59B-445B-B21F-E1BC4E2F53CB}.Release|Win32.ActiveCfg = Release|Win32
+		{CDE6AA57-F59B-445B-B21F-E1BC4E2F53CB}.Release|Win32.Build.0 = Release|Win32
+		{3AA5BEE7-6047-46D1-BF5C-938B032F4EDC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3AA5BEE7-6047-46D1-BF5C-938B032F4EDC}.Debug|Win32.Build.0 = Debug|Win32
+		{3AA5BEE7-6047-46D1-BF5C-938B032F4EDC}.Release|Win32.ActiveCfg = Release|Win32
+		{3AA5BEE7-6047-46D1-BF5C-938B032F4EDC}.Release|Win32.Build.0 = Release|Win32
+		{24A9484A-8141-41C8-A99D-7068D9866A5B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{24A9484A-8141-41C8-A99D-7068D9866A5B}.Debug|Win32.Build.0 = Debug|Win32
+		{24A9484A-8141-41C8-A99D-7068D9866A5B}.Release|Win32.ActiveCfg = Release|Win32
+		{24A9484A-8141-41C8-A99D-7068D9866A5B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
