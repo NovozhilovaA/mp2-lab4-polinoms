@@ -13,6 +13,13 @@ Polinom :: Polinom(const Polinom &p){
 
 	//polinom = new Monom(*x.polinom);
 
+	//Monom *cur =p.polinom;
+	//for (int i=0;cur!=NULL;i++)
+	//{
+	//	Add(cur->a,cur->N);
+	//	cur=cur->n;
+	//}
+	//
 	polinom = new Monom;
 		polinom->n=NULL;
 		Monom *cur = new Monom;
@@ -24,6 +31,8 @@ Polinom :: Polinom(const Polinom &p){
 		}
 
 }
+
+
 
 void Polinom::Clean()
 	{
@@ -103,9 +112,9 @@ void Polinom :: Add(double coeff,int N){ //упорядоченная вставка монома в список
 	//t->set_st_pol((N)Get_x,(N)Get_y, Get_z(N));
 	t->N=N;
 	t->a=coeff;
-	t->n=NULL;
+	//t->n=NULL;
 
-	if(coeff == 0) return;
+	if(t->a == 0) return;
 	if(polinom==NULL)
 	{ 
 		polinom = new Monom(coeff, N);
@@ -114,7 +123,9 @@ void Polinom :: Add(double coeff,int N){ //упорядоченная вставка монома в список
 		return;
 	}
 
-	if ((t->N)<(polinom->N)){
+	if ((t->N)>(polinom->N))
+	{
+								// по убыванию сделать++
 		t->n=polinom;
 		polinom=t;
 		return;
@@ -140,9 +151,10 @@ void Polinom :: Add(double coeff,int N){ //упорядоченная вставка монома в список
 	{
 		if ((t->N)>=(cur->n->N))
 			break;
+		cur=cur->n;// add
 	}
 
-	if (cur->n=NULL)
+	if (cur->n==NULL)// кидаем следующим, переделать
 	{
 		cur->n=t;
 		return;
@@ -160,8 +172,10 @@ void Polinom :: Add(double coeff,int N){ //упорядоченная вставка монома в список
 		}
 		return;
 	}
-	t->n=cur->n;
-	cur->n=t;
+
+	t->n=cur;
+	//t->n=cur->n;// 
+	//cur->n=t;//
 
 	
 	
@@ -169,7 +183,7 @@ void Polinom :: Add(double coeff,int N){ //упорядоченная вставка монома в список
 
 Polinom& Polinom:: operator=(const Polinom &p)
 	{
-		this->Clean();
+	/*	this->Clean();
 		polinom = p.polinom;
 		Monom *l1 = p.polinom;
 		Monom *l2 = (*this).polinom;
@@ -180,8 +194,31 @@ Polinom& Polinom:: operator=(const Polinom &p)
 			l1 = l1->n;
 			l2 = l2->n;
 		}
-		return *this;
+		return *this;*/
+
+		/*if (this==&p)
+		return *this;*/
+
+	Monom *m=this->polinom;
+	for (int i=0;m!= NULL;i++)
+	{
+		Monom *del=m;
+		m=m->n;
+		delete del;
 	}
+
+	Monom *cur=p.polinom;
+	for (int i=0;cur!=NULL;i++)
+	{
+		Add(cur->a,cur->N);
+		cur=cur->n;
+	}
+
+	return *this;
+	}
+
+
+
 
 	bool Polinom:: operator==(const Polinom &p) const
 	{
@@ -227,7 +264,7 @@ void Polinom::out_pol()
 			p=p->n;
 	}
 }
-*/
+
 	void Polinom :: Input(){
 
 	double koeff;
@@ -282,30 +319,24 @@ void Polinom::out_pol()
 }
 	}
 
+*/
 
 	ostream& operator<<(ostream &out, const Polinom &p)
 	{
+		bool addfirst=false;
 		//Polinom q(p);
 		Monom *t = p.polinom;
-		/*if (t == NULL)
+	/*	if (t == NULL)//
 		{
 			out << t->a;
 			return out;
 		}
-		if (t->n == NULL)
-		{
-			if (t->a == 0)
-			{
-				out << t->a;
-				return out;
-			}
-			else if (t->n == 0) out << t->a;
-			else out << t->a << "x^" << t->N / 100 << "y^" << (t->N / 10) % 10 << "z^" << t->N % 10 << endl;
-			return out;
-		}
 		while (t->n != NULL)
 		{
-			if (t->a == 0) t = t->n;
+			if (t->a == 0){
+
+				t = t->n;
+			}
 			else if (t->N == 0)
 			{
 				out << t->a;
@@ -316,27 +347,57 @@ void Polinom::out_pol()
 				out << t->a << "x^" << t->N / 100 << "y^" << (t->N / 10) % 10 << "z^" << t->N % 10;
 				t = t->n;
 			}
-			if (t->n != NULL) out << " + ";
+
+
 		//
-		if (t->a == 0) return out;
+			//if (t->n != NULL) out << " + ";
+		////
+		if (t->a == 0)
+			return out;
 		else if (t->N == 0) out << " + " << t->a;
 		else out << " + " << t->a << "x^" << t->N / 100 << "y^" << (t->N / 10) % 10 << "z^" << t->N % 10 << endl;
 		
-		}*/
+		} 
+
+		if (t->n == NULL)
+		{
+			if (t->a == 0)
+			{
+				out << t->a;
+				return out;
+			}
+			else if (t->N == 0) out << t->a;
+
+			else if(!addfirst)
+				out <<"+"<< t->a<< "x^" << t->N / 100 << "y^" << (t->N / 10) % 10 << "z^" << t->N % 10 << endl;
+			else out << t->a<< "x^" << t->N / 100 << "y^" << (t->N / 10) % 10 << "z^" << t->N % 10 << endl;
+			return out;
+		}
+	*/	
 
 		while (t != NULL)
 		{
+			if (t->n!=0)
+			{
 			out <<t->a << " x^" << t->N / 100 << " y^" << (t->N / 10) % 10 << "  z^" << t->N % 10 << " + ";
+			//t = t->n;
+			}
+			else 
+			{
+			out <<t->a << " x^" << t->N / 100 << " y^" << (t->N / 10) % 10 << "  z^" << t->N % 10 ;
+			//t = t->n;
+			}
 			t = t->n;
+
 		}
-
-
 
 		out <<endl;
 
 		return out;
 	}
 
+
+	
 
 
 
@@ -355,17 +416,51 @@ Polinom::~Polinom()
 }
 
 
-	
-	Polinom& Polinom:: operator+(const Polinom &p) const
+Polinom& Polinom:: operator+(const Polinom &p)const
 	{
-		Polinom *res = new Polinom(*this);
+
+		Polinom *res;
+		res = new Polinom(*this);
+		//Polinom q;
 		Monom *t = p.polinom;
 		while (t != NULL)
 		{
 			(*res).Add(t->a, t->N);
 			t = t->n;
 		}
+
+
 		return *res;
+
+
+	//	Polinom sum;
+	//Monom *cur1=this->polinom,*cur2=p.polinom;
+	//while (cur1!= NULL)
+	//{
+	//	if (cur1->N > cur2->N) //берем моном из первого списка
+	//	{
+	//		sum.Add(cur1->a,cur1->N);
+	//		cur1=cur1->n;
+	//	}
+	//	else if (cur1->N == cur2->N) //складываем мономы с одинаковыми свертками
+	//	{
+	//		sum.Add(cur1->a+cur2->a,cur1->N);
+	//		cur1=cur1->n;
+	//		cur2=cur2->n;
+	//	}
+	//	else // берем моном из второго списка
+	//	{
+	//		sum.Add(cur2->a,cur2->N); 
+	//		cur2=cur2->n;
+	//	}
+	//}
+	//// если остался хвост, добиваем его
+	//while (cur2!=NULL)
+	//{
+	//	sum.Add(cur2->a,cur2->N); 
+	//	cur2=cur2->n;
+	//}
+	//return sum;
 	}
 
 Polinom& Polinom:: operator*(int a) const
@@ -388,11 +483,13 @@ Polinom& Polinom:: operator*(int a) const
 		Monom *t = p.polinom;
 		while (t != NULL)
 		{
-			(*res).Add(-t->a, t->N);
+			(*res).Add((-1)*t->a, t->N);
 			t = t->n;
 		}
 		return *res;
 	}
+
+
 /*
 	Polinom& Polinom::operator*(const Polinom &p) const
 	{
@@ -401,6 +498,8 @@ Polinom& Polinom:: operator*(int a) const
 		for (Monom *t1 = p.polinom; t1 != NULL; t1 = t1->n)
 			for (Monom *t2 = q.polinom; t2 != NULL; t2 = t2->n)
 			{
+
+				
 				int s1(0), s2(0), s3(0);
 				s1 = (t1->a) % 10 + (t2->a) % 10;
 				s2 = (t1->a) / 10) % 10 + ((t2->a) / 10) % 10;
@@ -415,5 +514,5 @@ Polinom& Polinom:: operator*(int a) const
 		
 
 	}
-	*/
 	
+	*/

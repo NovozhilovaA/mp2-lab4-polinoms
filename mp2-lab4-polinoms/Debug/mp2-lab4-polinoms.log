@@ -1,9 +1,8 @@
-﻿Сборка начата 10.04.2016 21:55:55.
+﻿Сборка начата 07.05.2016 21:48:15.
      1>Проект "C:\Labs\mp2-lab4-polinoms\mp2-lab4-polinoms\mp2-lab4-polinoms.vcxproj" в узле 2 (целевые объекты Rebuild).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt polinom.cpp
          polinom.cpp
-     1>c:\labs\mp2-lab4-polinoms\mp2-lab4-polinoms\monom.h(52): warning C4715: Monom::set_st_pol: значение возвращается не при всех путях выполнения
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Labs\mp2-lab4-polinoms\Debug\mp2-lab4-polinoms.lib" /NOLOGO Debug\polinom.obj
          mp2-lab4-polinoms.vcxproj -> C:\Labs\mp2-lab4-polinoms\Debug\mp2-lab4-polinoms.lib
@@ -11,4 +10,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:01.69
+Затраченное время: 00:00:05.68

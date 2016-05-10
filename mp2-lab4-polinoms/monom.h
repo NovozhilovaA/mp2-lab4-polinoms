@@ -65,6 +65,8 @@ public:
 	}
 	*/
 
+	
+
 	int Get_x(int N){
 
 		//int NN=m->N;

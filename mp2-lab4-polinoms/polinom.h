@@ -1,7 +1,7 @@
 #ifndef _POLINOM_H_
 #define _POLINOM_H_
 #include "monom.h"
-#pragma warning (disable: 4703)
+//#pragma warning (disable: 4703)
 
 class Polinom
 {
@@ -20,9 +20,10 @@ public:
 	Polinom&  operator=(const Polinom &p);
 	bool  operator==(const Polinom &p) const;
 	Polinom&  operator*(int a) const;
-	Polinom&  operator+(const Polinom &p) const;
+	Polinom& operator+(const Polinom &p)const;
 	Polinom&  operator-(const Polinom &p) const;
 	Polinom& operator*(const Polinom &p) const;
+	void add(Monom *M);
 
 };
 

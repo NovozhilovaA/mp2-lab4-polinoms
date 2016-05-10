@@ -79,6 +79,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mp2-lab4-polinoms\mp2-lab4-polinoms.vcxproj">
+      <Project>{276b7a9f-9674-4e42-bf45-acc193d3a294}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
